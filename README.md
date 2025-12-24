@@ -1,6 +1,10 @@
+<img src="https://raw.githubusercontent.com/EinsPommes/ios-light/main/assets/ios-light.png">
+
 # iOS Light
 
 A beautiful iOS-inspired Discord theme featuring San Francisco fonts, iOS color palette, rounded corners, blur effects, and modern UI elements. Built on top of system24's modular architecture. Perfect for Vencord and BetterDiscord.
+
+<img src="https://raw.githubusercontent.com/EinsPommes/ios-light/main/assets/screenshot.png">
 
 ## Features
 
