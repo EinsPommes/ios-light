@@ -469,6 +469,8 @@
     [class*="Name"],
     [class*="username"],
     [class*="Username"],
+    [class*="displayName"],
+    [class*="DisplayName"],
     [class*="text"],
     [class*="Text"],
     [class*="title"],
@@ -477,6 +479,8 @@
     p, span,
     div[class*="text"],
     div[class*="name"],
+    div[class*="username"],
+    div[class*="displayName"],
     [class*="friend"],
     [class*="Friend"],
     [class*="activity"],
@@ -488,7 +492,13 @@
     [class*="item"],
     [class*="Item"],
     [class*="container"],
-    [class*="Container"] {
+    [class*="Container"],
+    [class*="header"],
+    [class*="Header"],
+    [class*="subtext"],
+    [class*="Subtext"],
+    [class*="label"],
+    [class*="Label"] {
         background: transparent !important;
         background-color: transparent !important;
         background-image: none !important;
@@ -515,6 +525,8 @@
     [class*="Name"],
     [class*="username"],
     [class*="Username"],
+    [class*="displayName"],
+    [class*="DisplayName"],
     [class*="text"],
     [class*="Text"],
     [class*="title"],
@@ -565,6 +577,55 @@
     [class*="Body"] {
         background: transparent !important;
         background-color: transparent !important;
+    }
+
+    /* Specific fix for message author names and user info - high specificity */
+    [class*="message"] [class*="name"],
+    [class*="message"] [class*="Name"],
+    [class*="message"] [class*="username"],
+    [class*="message"] [class*="Username"],
+    [class*="message"] [class*="displayName"],
+    [class*="message"] [class*="DisplayName"],
+    [class*="message"] [class*="author"],
+    [class*="message"] [class*="Author"],
+    [class*="message"] [class*="header"],
+    [class*="message"] [class*="Header"],
+    [class*="member"] [class*="name"],
+    [class*="member"] [class*="Name"],
+    [class*="member"] [class*="username"],
+    [class*="member"] [class*="Username"],
+    [class*="member"] [class*="displayName"],
+    [class*="member"] [class*="DisplayName"],
+    [class*="userInfo"] [class*="name"],
+    [class*="userInfo"] [class*="Name"],
+    [class*="userInfo"] [class*="username"],
+    [class*="userInfo"] [class*="Username"],
+    [class*="userInfo"] [class*="displayName"],
+    [class*="userInfo"] [class*="DisplayName"],
+    [class*="cozy"] [class*="name"],
+    [class*="cozy"] [class*="Name"],
+    [class*="cozy"] [class*="username"],
+    [class*="cozy"] [class*="Username"],
+    [class*="compact"] [class*="name"],
+    [class*="compact"] [class*="Name"],
+    [class*="compact"] [class*="username"],
+    [class*="compact"] [class*="Username"] {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        color: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    /* Universal selector for any element containing name/username classes */
+    *[class*="name"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="Name"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="username"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="Username"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="displayName"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="DisplayName"]:not([class*="container"]):not([class*="Container"]) {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
     }
 }
 

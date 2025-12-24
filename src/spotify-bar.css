@@ -4,12 +4,6 @@
     initial-value: on;
 }
 
-@property --custom-spotify-bar {
-    syntax: 'off | on';
-    inherits: false;
-    initial-value: on;
-}
-
 @container body style(--custom-spotify-bar: on) {
     .visual-refresh {
         #vc-spotify-progress-bar {

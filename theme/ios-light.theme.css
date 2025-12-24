@@ -11,10 +11,11 @@
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/main.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/colors.css');
+@import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/ascii.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/panel-labels.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/spotify-bar.css');
+@import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/unrounding.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/ios.css');
-/* unrounding.css is NOT imported - iOS uses rounded corners (--unrounding: off) */
 
 body {
     /* font, change to '' for default discord font */
