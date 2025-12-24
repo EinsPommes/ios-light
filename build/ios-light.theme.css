@@ -605,5 +605,14 @@ body {
     --purple-3: #5856D6;
     --purple-4: #4A48C4; /* darker purple */
     --purple-5: #3D3BB2; /* darkest purple */
+
+    /* Discord background variables - override midnight.css dark values */
+    --background-base-low: transparent !important;
+    --background-base-lower: transparent !important;
+    --background-base-lowest: transparent !important;
+    --background-surface-high: rgba(0, 0, 0, 0.05) !important;
+    --background-accent: rgba(0, 0, 0, 0.05) !important;
+    --brand-360: #007AFF !important; /* iOS blue */
+    --text-muted: rgba(0, 0, 0, 0.4) !important;
 }
 

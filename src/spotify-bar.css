@@ -16,7 +16,7 @@
         #app-mount #vc-spotify-progress-bar .a562c840daab72a7-bar {
             height: 22px !important;
             top: 0 !important;
-            background-color: var(--background-surface-high);
+            background-color: rgba(0, 0, 0, 0.05) !important; /* iOS subtle background */
         }
         #app-mount #vc-spotify-progress-bar .a562c840daab72a7-barFill {
             height: 22px !important;

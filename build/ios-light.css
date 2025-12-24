@@ -24,10 +24,10 @@ body {
 
 .visual-refresh {
     ._960e4207cea8323e-bg {
-        background: var(--background-base-low);
+        background: transparent !important; /* iOS doesn't use dark backgrounds */
     }
     ._01ae244280823725-container {
-        background-color: var(--background-base-low);
+        background-color: transparent !important; /* iOS doesn't use dark backgrounds */
     }
     ._37e49614b9f110a9-container {
         padding: 8px;
@@ -749,7 +749,7 @@ body {
         #app-mount #vc-spotify-progress-bar .a562c840daab72a7-bar {
             height: 22px !important;
             top: 0 !important;
-            background-color: var(--background-surface-high);
+            background-color: rgba(0, 0, 0, 0.05) !important; /* iOS subtle background */
         }
         #app-mount #vc-spotify-progress-bar .a562c840daab72a7-barFill {
             height: 22px !important;
