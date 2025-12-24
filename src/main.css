@@ -5,7 +5,7 @@
     font-family: 'asciid';
     font-style: normal;
     font-weight: 400;
-    src: local('asciid'), url('https://einspommes.github.io/ios-light/assets/asciid.woff') format('woff');
+    src: local('asciid'), url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/assets/asciid.woff') format('woff');
 }
 
 body {

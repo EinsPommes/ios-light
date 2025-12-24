@@ -6,7 +6,7 @@ A beautiful iOS-inspired Discord theme featuring San Francisco fonts, iOS color 
 
 ### Vencord/BetterDiscord (or any client that supports theme files)
 
-1. Download the theme file: [`ios-light.theme.css`](https://github.com/EinsPommes/ios-light/blob/main/theme/ios-light.theme.css)
+1. Download the theme file: [`ios-light.theme.css`](https://raw.githubusercontent.com/EinsPommes/ios-light/main/theme/ios-light.theme.css) (Right-click and "Save As")
 2. Drag the file into your theme folder
 3. Enable the theme in your client settings
 
