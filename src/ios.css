@@ -440,3 +440,74 @@
     }
 }
 
+/* Fix dark backgrounds on text elements - remove all dark backgrounds from names and text */
+.visual-refresh {
+    /* Remove dark backgrounds from all text elements */
+    [class*="name"],
+    [class*="Name"],
+    [class*="username"],
+    [class*="Username"],
+    [class*="text"],
+    [class*="Text"],
+    [class*="title"],
+    [class*="Title"],
+    h1, h2, h3, h4, h5, h6,
+    p, span, div[class*="text"],
+    [class*="friend"],
+    [class*="Friend"],
+    [class*="activity"],
+    [class*="Activity"],
+    [class*="user"],
+    [class*="User"] {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+
+    /* Remove dark backgrounds from containers in friends list and activity sidebar */
+    [class*="peopleColumn"],
+    [class*="nowPlayingColumn"],
+    [class*="friends"],
+    [class*="Friends"],
+    [class*="activity"],
+    [class*="Activity"],
+    [class*="listItem"],
+    [class*="ListItem"],
+    [class*="row"],
+    [class*="Row"],
+    [class*="item"],
+    [class*="Item"] {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+
+    /* Ensure text colors are correct for light theme */
+    [class*="name"],
+    [class*="Name"],
+    [class*="username"],
+    [class*="Username"],
+    [class*="text"],
+    [class*="Text"] {
+        color: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    /* Remove any dark backgrounds from friend list items */
+    [class*="peopleColumn"] [class*="listItem"],
+    [class*="peopleColumn"] [class*="ListItem"],
+    [class*="nowPlayingColumn"] [class*="listItem"],
+    [class*="nowPlayingColumn"] [class*="ListItem"],
+    [class*="friends"] [class*="listItem"],
+    [class*="friends"] [class*="ListItem"] {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+
+    /* Remove dark backgrounds from activity items */
+    [class*="activity"] [class*="item"],
+    [class*="Activity"] [class*="Item"],
+    [class*="nowPlayingColumn"] [class*="item"],
+    [class*="nowPlayingColumn"] [class*="Item"] {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+}
+

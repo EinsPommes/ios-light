@@ -63,21 +63,15 @@ function processThemeFile(compiledCSS) {
 
 	const themeContent = fs.readFileSync(baseFile, 'utf8');
 	
-	// Replace build/ios-light.css import with actual content
+	// Replace build/ios-light.css import with actual content (like system24 does)
 	const processedContent = themeContent.replace(
 		/@import\s+url\(['"]?https:\/\/raw\.githubusercontent\.com\/EinsPommes\/ios-light\/main\/build\/ios-light\.css['"]?\);?/g,
 		compiledCSS
 	);
 
-	// Also replace ios.css import if it exists
-	const finalContent = processedContent.replace(
-		/@import\s+url\(['"]?https:\/\/raw\.githubusercontent\.com\/EinsPommes\/ios-light\/main\/src\/ios\.css['"]?\);?/g,
-		`/* ios.css */\n${fs.readFileSync(path.join(srcDir, 'ios.css'), 'utf8')}\n`
-	);
-
 	// Write theme to build directory
 	const buildThemeFile = path.join(__dirname, '..', '/build/ios-light.theme.css');
-	fs.writeFileSync(buildThemeFile, finalContent);
+	fs.writeFileSync(buildThemeFile, processedContent);
 	console.log(`Updated ${buildThemeFile}`);
 }
 
@@ -91,11 +85,8 @@ function processFiles() {
 		outputPaths.forEach((outputPath) => {
 			const themeContent = fs.readFileSync(baseFile, 'utf8');
 			const processedContent = themeContent.replace(
-				/@import\s+url\(['"]?https:\/\/einspommes\.github\.io\/ios-light\/build\/ios-light\.css['"]?\);?/g,
+				/@import\s+url\(['"]?https:\/\/raw\.githubusercontent\.com\/EinsPommes\/ios-light\/main\/build\/ios-light\.css['"]?\);?/g,
 				compiledCSS
-			).replace(
-				/@import\s+url\(['"]?https:\/\/einspommes\.github\.io\/ios-light\/src\/ios\.css['"]?\);?/g,
-				`/* ios.css */\n${fs.readFileSync(path.join(srcDir, 'ios.css'), 'utf8')}\n`
 			);
 			fs.writeFileSync(outputPath, processedContent);
 			console.log(`Updated ${outputPath}`);
