@@ -32,10 +32,10 @@ body {
                 position: absolute;
                 top: -10px;
                 left: 8px;
-                background-color: var(--background-base-low);
+                background-color: transparent; /* iOS doesn't use background for labels */
                 padding: 0 4px;
                 z-index: 100;
-                font-size: 16px;
+                font-size: 13px; /* iOS uses 13px for labels */
                 transition: color var(--border-hover-transition);
             }
 

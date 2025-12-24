@@ -81,6 +81,7 @@ body {
     --panel-labels: on;
     --label-color: rgba(0, 0, 0, 0.4); /* iOS label color - subtle gray */
     --label-font-weight: 600; /* iOS uses semibold for labels */
+    --label-hover-color: #007AFF; /* iOS blue for hover */
 }
 
 /* color options */

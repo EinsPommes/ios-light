@@ -183,11 +183,29 @@ body {
         ._133bf5eea8e33a34-nowPlayingColumn::after,
         ._01ae244280823725-container > ._9293f6b2fc12398a-container::after,
         .cb9592ad77576717-callContainer::after {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
-            font-size: 13px; /* iOS uses 13px for labels */
-            letter-spacing: -0.01em; /* iOS letter spacing */
-            text-transform: uppercase;
-            font-weight: 600; /* iOS semibold */
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif !important;
+            font-size: 13px !important; /* iOS uses 13px for labels */
+            letter-spacing: -0.01em !important; /* iOS letter spacing */
+            text-transform: uppercase !important;
+            font-weight: 600 !important; /* iOS semibold */
+            background-color: transparent !important; /* No background for iOS labels */
+            color: rgba(0, 0, 0, 0.4) !important; /* iOS subtle gray */
+        }
+
+        ._5e434347c823b592-guilds:hover::after,
+        ._5e434347c823b592-panels:hover::after,
+        ._5e434347c823b592-sidebarList:hover::after,
+        .f75fb00fb7356cbe-subtitleContainer:hover::after,
+        ._36d072eab2b2e737-messagesWrapper:hover::after,
+        .f75fb00fb7356cbe-channelTextArea:hover::after,
+        .c8ffbb79449f399c-container:hover::after,
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap:hover::after,
+        ._133bf5eea8e33a34-container > ._9293f6b2fc12398a-container:hover::after,
+        ._133bf5eea8e33a34-peopleColumn:hover::after,
+        ._133bf5eea8e33a34-nowPlayingColumn:hover::after,
+        ._01ae244280823725-container > ._9293f6b2fc12398a-container:hover::after,
+        .cb9592ad77576717-callContainer:hover::after {
+            color: #007AFF !important; /* iOS blue on hover */
         }
     }
 }
@@ -591,10 +609,10 @@ body {
                 position: absolute;
                 top: -10px;
                 left: 8px;
-                background-color: var(--background-base-low);
+                background-color: transparent; /* iOS doesn't use background for labels */
                 padding: 0 4px;
                 z-index: 100;
-                font-size: 16px;
+                font-size: 13px; /* iOS uses 13px for labels */
                 transition: color var(--border-hover-transition);
             }
 
