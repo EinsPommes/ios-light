@@ -8,13 +8,11 @@
 */
 
 /* import theme modules */
-/* import theme modules */
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/main.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/colors.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/panel-labels.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/spotify-bar.css');
-@import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/unrounding.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/ios.css');
 /* unrounding.css is NOT imported - iOS uses rounded corners (--unrounding: off) */
 
@@ -165,21 +163,46 @@ body {
     --purple-5: #3D3BB2; /* darkest purple */
 
     /* Discord background variables - override midnight.css dark values */
+    --background-base: #FFFFFF !important;
     --background-base-low: transparent !important;
     --background-base-lower: transparent !important;
     --background-base-lowest: transparent !important;
-    --background-surface-high: rgba(0, 0, 0, 0.05) !important;
+    --background-secondary: #FFFFFF !important;
+    --background-secondary-alt: #F2F2F7 !important;
+    --background-tertiary: #F2F2F7 !important;
     --background-accent: rgba(0, 0, 0, 0.05) !important;
+    --background-floating: rgba(255, 255, 255, 0.9) !important;
+    --background-mobile-primary: #FFFFFF !important;
+    --background-mobile-secondary: #F2F2F7 !important;
     --background-modifier-hover: rgba(0, 0, 0, 0.04) !important;
     --background-modifier-active: rgba(0, 0, 0, 0.08) !important;
     --background-modifier-selected: rgba(0, 122, 255, 0.1) !important;
-    --background-floating: rgba(255, 255, 255, 0.8) !important;
+    --background-modifier-accent: rgba(0, 0, 0, 0.05) !important;
+    --background-mentioned: rgba(0, 122, 255, 0.08) !important;
+    --background-mentioned-hover: rgba(0, 122, 255, 0.12) !important;
+    --background-message-hover: rgba(0, 0, 0, 0.015) !important;
+    --background-message-automod: rgba(255, 59, 48, 0.1) !important;
+    --background-message-automod-hover: rgba(255, 59, 48, 0.15) !important;
+    --background-message-highlight: rgba(0, 122, 255, 0.08) !important;
+    --background-message-highlight-hover: rgba(0, 122, 255, 0.12) !important;
+    --background-primary: #FFFFFF !important;
+    --background-secondary-alt: #F2F2F7 !important;
+    --background-tertiary: #F2F2F7 !important;
+    --background-surface-high: rgba(0, 0, 0, 0.05) !important;
+    --background-surface-low: transparent !important;
+    --background-surface-lowest: transparent !important;
     --brand-360: #007AFF !important; /* iOS blue */
     --text-muted: rgba(0, 0, 0, 0.4) !important;
     --text-normal: rgba(0, 0, 0, 0.85) !important;
     --text-positive: rgba(0, 0, 0, 0.85) !important;
+    --text-link: #007AFF !important;
+    --text-link-low-saturation: #007AFF !important;
     --interactive-normal: rgba(0, 0, 0, 0.85) !important;
     --interactive-hover: rgba(0, 0, 0, 0.85) !important;
     --interactive-active: rgba(0, 0, 0, 0.85) !important;
+    --interactive-muted: rgba(0, 0, 0, 0.4) !important;
+    --channeltextarea-background: rgba(0, 0, 0, 0.05) !important;
+    --input-background: rgba(0, 0, 0, 0.05) !important;
+    --input-placeholder-text: rgba(0, 0, 0, 0.4) !important;
 }
 

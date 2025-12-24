@@ -575,9 +575,26 @@ body {
 
 /* Fix dark backgrounds on text elements - remove all dark backgrounds from names and text */
 .visual-refresh {
-    /* Remove dark backgrounds from all text elements and containers */
-    * {
-        /* Override any dark backgrounds that might come from midnight.css or system24.css */
+    /* Force light backgrounds on all main panels and containers */
+    #app-mount,
+    [class*="app"],
+    [class*="App"],
+    [class*="base"],
+    [class*="Base"],
+    [class*="layer"],
+    [class*="Layer"],
+    [class*="page"],
+    [class*="Page"],
+    [class*="sidebar"],
+    [class*="Sidebar"],
+    [class*="panels"],
+    [class*="Panels"],
+    [class*="container"],
+    [class*="Container"],
+    [class*="content"],
+    [class*="Content"] {
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
     }
 
     /* Remove dark backgrounds from all text elements */
