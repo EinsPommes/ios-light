@@ -575,6 +575,11 @@ body {
 
 /* Fix dark backgrounds on text elements - remove all dark backgrounds from names and text */
 .visual-refresh {
+    /* Remove dark backgrounds from all text elements and containers */
+    * {
+        /* Override any dark backgrounds that might come from midnight.css or system24.css */
+    }
+
     /* Remove dark backgrounds from all text elements */
     [class*="name"],
     [class*="Name"],
@@ -585,15 +590,24 @@ body {
     [class*="title"],
     [class*="Title"],
     h1, h2, h3, h4, h5, h6,
-    p, span, div[class*="text"],
+    p, span,
+    div[class*="text"],
+    div[class*="name"],
     [class*="friend"],
     [class*="Friend"],
     [class*="activity"],
     [class*="Activity"],
     [class*="user"],
-    [class*="User"] {
+    [class*="User"],
+    [class*="row"],
+    [class*="Row"],
+    [class*="item"],
+    [class*="Item"],
+    [class*="container"],
+    [class*="Container"] {
         background: transparent !important;
         background-color: transparent !important;
+        background-image: none !important;
     }
 
     /* Remove dark backgrounds from containers in friends list and activity sidebar */
@@ -605,12 +619,11 @@ body {
     [class*="Activity"],
     [class*="listItem"],
     [class*="ListItem"],
-    [class*="row"],
-    [class*="Row"],
-    [class*="item"],
-    [class*="Item"] {
+    [class*="tabBody"],
+    [class*="TabBody"] {
         background: transparent !important;
         background-color: transparent !important;
+        background-image: none !important;
     }
 
     /* Ensure text colors are correct for light theme */
@@ -619,26 +632,53 @@ body {
     [class*="username"],
     [class*="Username"],
     [class*="text"],
-    [class*="Text"] {
+    [class*="Text"],
+    [class*="title"],
+    [class*="Title"] {
         color: rgba(0, 0, 0, 0.85) !important;
     }
 
-    /* Remove any dark backgrounds from friend list items */
+    /* Remove any dark backgrounds from friend list items and their children */
     [class*="peopleColumn"] [class*="listItem"],
     [class*="peopleColumn"] [class*="ListItem"],
+    [class*="peopleColumn"] [class*="listItem"] *,
+    [class*="peopleColumn"] [class*="ListItem"] *,
     [class*="nowPlayingColumn"] [class*="listItem"],
     [class*="nowPlayingColumn"] [class*="ListItem"],
+    [class*="nowPlayingColumn"] [class*="listItem"] *,
+    [class*="nowPlayingColumn"] [class*="ListItem"] *,
     [class*="friends"] [class*="listItem"],
-    [class*="friends"] [class*="ListItem"] {
+    [class*="friends"] [class*="ListItem"],
+    [class*="friends"] [class*="listItem"] *,
+    [class*="friends"] [class*="ListItem"] * {
         background: transparent !important;
         background-color: transparent !important;
+        background-image: none !important;
     }
 
     /* Remove dark backgrounds from activity items */
     [class*="activity"] [class*="item"],
     [class*="Activity"] [class*="Item"],
+    [class*="activity"] [class*="item"] *,
+    [class*="Activity"] [class*="Item"] *,
     [class*="nowPlayingColumn"] [class*="item"],
-    [class*="nowPlayingColumn"] [class*="Item"] {
+    [class*="nowPlayingColumn"] [class*="Item"],
+    [class*="nowPlayingColumn"] [class*="item"] *,
+    [class*="nowPlayingColumn"] [class*="Item"] * {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+
+    /* Remove dark backgrounds from any wrapper or container elements */
+    [class*="wrapper"],
+    [class*="Wrapper"],
+    [class*="content"],
+    [class*="Content"],
+    [class*="header"],
+    [class*="Header"],
+    [class*="body"],
+    [class*="Body"] {
         background: transparent !important;
         background-color: transparent !important;
     }
