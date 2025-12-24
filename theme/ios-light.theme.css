@@ -8,8 +8,8 @@
 */
 
 /* import theme modules */
-@import url('https://einspommes.github.io/ios-light/build/ios-light.css');
-@import url('https://einspommes.github.io/ios-light/src/ios.css');
+@import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/build/ios-light.css');
+@import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/ios.css');
 
 body {
     /* font, change to '' for default discord font */

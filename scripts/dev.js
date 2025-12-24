@@ -65,13 +65,13 @@ function processThemeFile(compiledCSS) {
 	
 	// Replace build/ios-light.css import with actual content
 	const processedContent = themeContent.replace(
-		/@import\s+url\(['"]?https:\/\/einspommes\.github\.io\/ios-light\/build\/ios-light\.css['"]?\);?/g,
+		/@import\s+url\(['"]?https:\/\/raw\.githubusercontent\.com\/EinsPommes\/ios-light\/main\/build\/ios-light\.css['"]?\);?/g,
 		compiledCSS
 	);
 
 	// Also replace ios.css import if it exists
 	const finalContent = processedContent.replace(
-		/@import\s+url\(['"]?https:\/\/einspommes\.github\.io\/ios-light\/src\/ios\.css['"]?\);?/g,
+		/@import\s+url\(['"]?https:\/\/raw\.githubusercontent\.com\/EinsPommes\/ios-light\/main\/src\/ios\.css['"]?\);?/g,
 		`/* ios.css */\n${fs.readFileSync(path.join(srcDir, 'ios.css'), 'utf8')}\n`
 	);
 

@@ -22,7 +22,7 @@ A beautiful iOS-inspired Discord theme featuring San Francisco fonts, iOS color 
 
 ### Install through link
 
-Add `https://einspommes.github.io/ios-light/build/ios-light.css` to your theme import links.
+Add `https://raw.githubusercontent.com/EinsPommes/ios-light/main/theme/ios-light.theme.css` to your theme import links.
 
 ## Development
 
