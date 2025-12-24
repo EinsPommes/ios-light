@@ -1,0 +1,424 @@
+/* iOS-specific styling enhancements */
+
+/* iOS-style rounded corners for panels */
+@container body style(--unrounding: off) {
+    .visual-refresh {
+        /* iOS uses 10px border radius for panels */
+        ._5e434347c823b592-panels,
+        ._5e434347c823b592-sidebar,
+        ._36d072eab2b2e737-messagesWrapper,
+        .f75fb00fb7356cbe-channelTextArea,
+        .c8ffbb79449f399c-container {
+            border-radius: 10px !important;
+        }
+
+        /* iOS uses 8px border radius for smaller elements */
+        ._5e434347c823b592-guilds,
+        ._133bf5eea8e33a34-container,
+        ._01ae244280823725-container {
+            border-radius: 8px !important;
+        }
+
+        /* iOS uses 12px border radius for buttons */
+        button,
+        .button,
+        [role="button"] {
+            border-radius: 12px !important;
+        }
+
+        /* iOS uses 20px border radius for avatars */
+        .a423bdd721ddcc83-avatar,
+        ._44b0c28be7879b7b-wrapper {
+            border-radius: 20px !important;
+        }
+    }
+}
+
+/* iOS-style panel labels with SF Pro font */
+@container body style(--panel-labels: on) {
+    .visual-refresh {
+        ._5e434347c823b592-guilds::after,
+        ._5e434347c823b592-panels::after,
+        ._5e434347c823b592-sidebarList::after,
+        .f75fb00fb7356cbe-subtitleContainer::after,
+        ._36d072eab2b2e737-messagesWrapper::after,
+        .f75fb00fb7356cbe-channelTextArea::after,
+        .c8ffbb79449f399c-container::after,
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap::after,
+        ._133bf5eea8e33a34-container > ._9293f6b2fc12398a-container::after,
+        ._133bf5eea8e33a34-peopleColumn::after,
+        ._133bf5eea8e33a34-nowPlayingColumn::after,
+        ._01ae244280823725-container > ._9293f6b2fc12398a-container::after,
+        .cb9592ad77576717-callContainer::after {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            font-size: 13px; /* iOS uses 13px for labels */
+            letter-spacing: -0.01em; /* iOS letter spacing */
+            text-transform: uppercase;
+            font-weight: 600; /* iOS semibold */
+        }
+    }
+}
+
+/* iOS-style spotify bar */
+@container body style(--custom-spotify-bar: on) {
+    .visual-refresh {
+        #vc-spotify-progress-bar {
+            border-radius: 8px !important; /* iOS rounded corners */
+        }
+        #app-mount #vc-spotify-progress-bar .a562c840daab72a7-bar {
+            border-radius: 8px !important;
+            background-color: rgba(0, 0, 0, 0.05); /* iOS subtle background */
+        }
+        #app-mount #vc-spotify-progress-bar .a562c840daab72a7-barFill {
+            border-radius: 8px !important;
+            background: linear-gradient(90deg, #007AFF, #5856D6) !important; /* iOS gradient */
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left,
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Mono', 'Monaco', monospace;
+            font-size: 13px; /* iOS monospace size */
+        }
+    }
+}
+
+/* iOS-style scrollbars */
+.visual-refresh {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.3);
+        background-clip: padding-box;
+    }
+}
+
+/* iOS-style input fields */
+.visual-refresh {
+    input,
+    textarea {
+        border-radius: 8px !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    }
+
+    /* iOS-style focus states */
+    input:focus,
+    textarea:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.3) !important;
+    }
+}
+
+/* iOS-style buttons */
+.visual-refresh {
+    button {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+        font-weight: 600; /* iOS semibold for buttons */
+        transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    /* iOS-style button press effect */
+    button:active {
+        transform: scale(0.97);
+        opacity: 0.8;
+    }
+}
+
+/* iOS-style modals and popovers */
+.visual-refresh {
+    [class*="modal"],
+    [class*="popover"],
+    [class*="menu"] {
+        border-radius: 14px !important; /* iOS modal radius */
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    }
+}
+
+/* iOS-style separators */
+.visual-refresh {
+    [class*="divider"],
+    [class*="separator"],
+    hr {
+        border: none;
+        height: 0.5px;
+        background: rgba(0, 0, 0, 0.1);
+        margin: 0;
+    }
+}
+
+/* iOS-style status indicators */
+.visual-refresh {
+    ._44b0c28be7879b7b-wrapper::after,
+    ._1ce5d425feffd32a-container::after {
+        border-radius: 50% !important; /* iOS circular status dots */
+        border-width: 2px !important;
+    }
+}
+
+/* iOS-style channel list items */
+.visual-refresh {
+    [class*="channel"] {
+        border-radius: 6px !important;
+        margin: 1px 0;
+    }
+
+    [class*="channel"]:hover {
+        background: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    [class*="channel"][class*="selected"] {
+        background: rgba(0, 122, 255, 0.1) !important;
+    }
+}
+
+/* iOS-style message bubbles */
+.visual-refresh {
+    [class*="message"] {
+        border-radius: 8px !important;
+    }
+}
+
+/* iOS-style code blocks */
+.visual-refresh {
+    code,
+    pre {
+        border-radius: 6px !important;
+        font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+/* iOS-style tooltips */
+.visual-refresh {
+    [class*="tooltip"],
+    [class*="Tooltip"] {
+        border-radius: 8px !important;
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        background: rgba(0, 0, 0, 0.8) !important;
+        padding: 6px 12px !important;
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+
+/* iOS-style badges and pills */
+.visual-refresh {
+    [class*="badge"],
+    [class*="Badge"],
+    [class*="pill"],
+    [class*="Pill"] {
+        border-radius: 10px !important;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 8px;
+    }
+}
+
+/* iOS-style switches */
+.visual-refresh {
+    [class*="switch"],
+    [class*="Switch"],
+    [type="checkbox"][role="switch"] {
+        border-radius: 16px !important;
+    }
+
+    [class*="switch"]::before,
+    [class*="Switch"]::before,
+    [type="checkbox"][role="switch"]::before {
+        border-radius: 50% !important;
+    }
+}
+
+/* iOS-style sliders */
+.visual-refresh {
+    [type="range"],
+    [class*="slider"],
+    [class*="Slider"] {
+        border-radius: 2px !important;
+    }
+
+    [type="range"]::-webkit-slider-thumb,
+    [class*="slider"]::-webkit-slider-thumb {
+        border-radius: 50% !important;
+        width: 28px;
+        height: 28px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* iOS-style tabs */
+.visual-refresh {
+    [class*="tab"],
+    [class*="Tab"],
+    [role="tab"] {
+        border-radius: 8px !important;
+        font-weight: 600;
+        transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    [class*="tab"][aria-selected="true"],
+    [class*="Tab"][aria-selected="true"],
+    [role="tab"][aria-selected="true"] {
+        background: rgba(0, 122, 255, 0.1) !important;
+        color: #007AFF !important;
+    }
+}
+
+/* iOS-style cards */
+.visual-refresh {
+    [class*="card"],
+    [class*="Card"] {
+        border-radius: 12px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
+}
+
+/* iOS-style list items */
+.visual-refresh {
+    [class*="listItem"],
+    [class*="ListItem"],
+    [role="listitem"] {
+        border-radius: 8px !important;
+        margin: 2px 0;
+        transition: background 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    [class*="listItem"]:hover,
+    [class*="ListItem"]:hover,
+    [role="listitem"]:hover {
+        background: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    [class*="listItem"][class*="selected"],
+    [class*="ListItem"][class*="selected"],
+    [role="listitem"][aria-selected="true"] {
+        background: rgba(0, 122, 255, 0.1) !important;
+    }
+}
+
+/* iOS-style embeds */
+.visual-refresh {
+    [class*="embed"],
+    [class*="Embed"] {
+        border-radius: 12px !important;
+        border-left-width: 4px !important;
+    }
+}
+
+/* iOS-style reactions */
+.visual-refresh {
+    [class*="reaction"],
+    [class*="Reaction"] {
+        border-radius: 12px !important;
+        border: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    [class*="reaction"]:hover,
+    [class*="Reaction"]:hover {
+        background: rgba(0, 122, 255, 0.1) !important;
+        border-color: rgba(0, 122, 255, 0.3) !important;
+    }
+}
+
+/* iOS-style mentions */
+.visual-refresh {
+    [class*="mention"],
+    [class*="Mention"] {
+        border-radius: 4px !important;
+        background: rgba(0, 122, 255, 0.1) !important;
+        color: #007AFF !important;
+        font-weight: 500;
+        padding: 1px 4px;
+    }
+}
+
+/* iOS-style loading states */
+.visual-refresh {
+    [class*="spinner"],
+    [class*="Spinner"],
+    [class*="loading"],
+    [class*="Loading"] {
+        border-radius: 50% !important;
+    }
+}
+
+/* iOS-style notification badges */
+.visual-refresh {
+    [class*="notification"],
+    [class*="Notification"],
+    [class*="unread"] {
+        border-radius: 10px !important;
+        background: #FF3B30 !important;
+        color: white !important;
+        font-weight: 600;
+        font-size: 11px;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 6px;
+    }
+}
+
+/* iOS-style search bars */
+.visual-refresh {
+    [class*="search"],
+    [class*="Search"],
+    input[type="search"] {
+        border-radius: 10px !important;
+        background: rgba(0, 0, 0, 0.05) !important;
+        border: none !important;
+        padding: 8px 12px !important;
+    }
+
+    [class*="search"]:focus,
+    [class*="Search"]:focus,
+    input[type="search"]:focus {
+        background: rgba(0, 0, 0, 0.08) !important;
+        box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2) !important;
+    }
+}
+
+/* iOS-style context menus */
+.visual-refresh {
+    [class*="contextMenu"],
+    [class*="ContextMenu"],
+    [class*="menu"] {
+        border-radius: 14px !important;
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        background: rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+        padding: 8px !important;
+    }
+
+    [class*="contextMenu"] [class*="item"],
+    [class*="ContextMenu"] [class*="item"],
+    [class*="menu"] [class*="item"] {
+        border-radius: 8px !important;
+        margin: 2px 0;
+    }
+
+    [class*="contextMenu"] [class*="item"]:hover,
+    [class*="ContextMenu"] [class*="item"]:hover,
+    [class*="menu"] [class*="item"]:hover {
+        background: rgba(0, 0, 0, 0.05) !important;
+    }
+}
+

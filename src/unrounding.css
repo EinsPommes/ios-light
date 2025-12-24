@@ -1,0 +1,86 @@
+@property --unrounding {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--unrounding: on) {
+    *,
+    *::before,
+    *::after {
+        border-radius: 0 !important;
+    }
+
+    .cc5dd25190031396-svg > mask,
+    ._44b0c28be7879b7b-svg > rect,
+    ._44b0c28be7879b7b-svg > circle,
+    ._44b0c28be7879b7b-svg > g,
+    ._44b0c28be7879b7b-svg rect[mask='url(#:rhi:)'],
+    ._20a53846fe2e8513-avatar .a423bdd721ddcc83-status {
+        display: none;
+    }
+
+    ._68edb95846a37624-mask > foreignObject,
+    ._44b0c28be7879b7b-svg > foreignObject,
+    ._2338f50c3988e5ec-svg > foreignObject {
+        mask: none;
+    }
+
+    ._44b0c28be7879b7b-wrapper,
+    ._1ce5d425feffd32a-container {
+        --online-2: #43a25a;
+        --dnd-2: #d83a41;
+        --idle-2: #ca9654;
+        --offline-2: #82838b;
+        --streaming-2: #9147ff;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect)::after,
+    ._1ce5d425feffd32a-container:has(.a423bdd721ddcc83-status)::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        bottom: -4px;
+        right: -4px;
+        border: 2px solid var(--background-base-lower);
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#43a25a'])::after,
+    ._1ce5d425feffd32a-container:has(.a423bdd721ddcc83-status[style='background-color: rgb(67, 162, 90);'])::after {
+        background: var(--online-2) !important;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#d83a42'])::after {
+        background: var(--dnd-2) !important;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#ca9654'])::after {
+        background: var(--idle-2) !important;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#82838b'])::after {
+        background: var(--offline-2) !important;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#9147ff'])::after {
+        background: var(--streaming-2);
+    }
+
+    .cc5dd25190031396-lowerBadge {
+        border: 2px solid var(--background-base-lower);
+        bottom: -4px;
+        right: -4px;
+    }
+    .cc5dd25190031396-upperBadge {
+        border: 2px solid var(--background-base-lower);
+        top: -4px;
+        right: -4px;
+    }
+    ._48112cbe77dc5022-folderGroup._48112cbe77dc5022-isExpanded > .dbd2630aec71879b-stack {
+        overflow: visible !important;
+    }
+
+    ._3f21e80f8677ec40-slider > rect[rx='10'] {
+        rx: 0 !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0 !important;
+    }
+}
