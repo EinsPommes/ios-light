@@ -442,257 +442,51 @@
 
 /* Fix dark backgrounds on text elements - remove all dark backgrounds from names and text */
 .visual-refresh {
-    /* Force light backgrounds on all main panels and containers */
-    #app-mount,
-    [class*="app"],
-    [class*="App"],
-    [class*="base"],
-    [class*="Base"],
-    [class*="layer"],
-    [class*="Layer"],
-    [class*="page"],
-    [class*="Page"],
-    [class*="sidebar"],
-    [class*="Sidebar"],
-    [class*="panels"],
-    [class*="Panels"],
-    [class*="container"],
-    [class*="Container"],
-    [class*="content"],
-    [class*="Content"] {
-        background: #FFFFFF !important;
-        background-color: #FFFFFF !important;
-    }
-
-    /* Remove dark backgrounds from all text elements */
-    [class*="name"],
-    [class*="Name"],
-    [class*="username"],
-    [class*="Username"],
-    [class*="displayName"],
-    [class*="DisplayName"],
-    [class*="text"],
-    [class*="Text"],
-    [class*="title"],
-    [class*="Title"],
-    h1, h2, h3, h4, h5, h6,
-    p, span,
-    div[class*="text"],
-    div[class*="name"],
-    div[class*="username"],
-    div[class*="displayName"],
-    [class*="friend"],
-    [class*="Friend"],
-    [class*="activity"],
-    [class*="Activity"],
-    [class*="user"],
-    [class*="User"],
-    [class*="row"],
-    [class*="Row"],
-    [class*="item"],
-    [class*="Item"],
-    [class*="container"],
-    [class*="Container"],
-    [class*="header"],
-    [class*="Header"],
-    [class*="subtext"],
-    [class*="Subtext"],
-    [class*="label"],
-    [class*="Label"] {
-        background: transparent !important;
-        background-color: transparent !important;
-        background-image: none !important;
-    }
-
-    /* Remove dark backgrounds from containers in friends list and activity sidebar */
-    [class*="peopleColumn"],
-    [class*="nowPlayingColumn"],
-    [class*="friends"],
-    [class*="Friends"],
-    [class*="activity"],
-    [class*="Activity"],
-    [class*="listItem"],
-    [class*="ListItem"],
-    [class*="tabBody"],
-    [class*="TabBody"] {
+    /* Remove dark backgrounds from all text elements - specifically target name/username elements */
+    [class*="name"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    [class*="Name"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    [class*="username"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    [class*="Username"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    [class*="displayName"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    [class*="DisplayName"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    [class*="author"]:not([class*="container"]):not([class*="Container"]),
+    [class*="Author"]:not([class*="container"]):not([class*="Container"]) {
         background: transparent !important;
         background-color: transparent !important;
         background-image: none !important;
     }
 
     /* Ensure text colors are correct for light theme */
-    [class*="name"],
-    [class*="Name"],
-    [class*="username"],
-    [class*="Username"],
-    [class*="displayName"],
-    [class*="DisplayName"],
-    [class*="text"],
-    [class*="Text"],
-    [class*="title"],
-    [class*="Title"] {
+    [class*="name"]:not([class*="container"]):not([class*="Container"]),
+    [class*="Name"]:not([class*="container"]):not([class*="Container"]),
+    [class*="username"]:not([class*="container"]):not([class*="Container"]),
+    [class*="Username"]:not([class*="container"]):not([class*="Container"]),
+    [class*="displayName"]:not([class*="container"]):not([class*="Container"]),
+    [class*="DisplayName"]:not([class*="container"]):not([class*="Container"]) {
         color: rgba(0, 0, 0, 0.85) !important;
     }
 
-    /* Remove any dark backgrounds from friend list items and their children */
-    [class*="peopleColumn"] [class*="listItem"],
-    [class*="peopleColumn"] [class*="ListItem"],
-    [class*="peopleColumn"] [class*="listItem"] *,
-    [class*="peopleColumn"] [class*="ListItem"] *,
-    [class*="nowPlayingColumn"] [class*="listItem"],
-    [class*="nowPlayingColumn"] [class*="ListItem"],
-    [class*="nowPlayingColumn"] [class*="listItem"] *,
-    [class*="nowPlayingColumn"] [class*="ListItem"] *,
-    [class*="friends"] [class*="listItem"],
-    [class*="friends"] [class*="ListItem"],
-    [class*="friends"] [class*="listItem"] *,
-    [class*="friends"] [class*="ListItem"] * {
-        background: transparent !important;
-        background-color: transparent !important;
-        background-image: none !important;
-    }
-
-    /* Remove dark backgrounds from activity items */
-    [class*="activity"] [class*="item"],
-    [class*="Activity"] [class*="Item"],
-    [class*="activity"] [class*="item"] *,
-    [class*="Activity"] [class*="Item"] *,
-    [class*="nowPlayingColumn"] [class*="item"],
-    [class*="nowPlayingColumn"] [class*="Item"],
-    [class*="nowPlayingColumn"] [class*="item"] *,
-    [class*="nowPlayingColumn"] [class*="Item"] * {
-        background: transparent !important;
-        background-color: transparent !important;
-        background-image: none !important;
-    }
-
-    /* Remove dark backgrounds from any wrapper or container elements */
-    [class*="wrapper"],
-    [class*="Wrapper"],
-    [class*="content"],
-    [class*="Content"],
-    [class*="header"],
-    [class*="Header"],
-    [class*="body"],
-    [class*="Body"] {
-        background: transparent !important;
-        background-color: transparent !important;
-    }
-
-    /* Specific fix for message author names and user info - high specificity */
-    [class*="message"] [class*="name"],
-    [class*="message"] [class*="Name"],
-    [class*="message"] [class*="username"],
-    [class*="message"] [class*="Username"],
-    [class*="message"] [class*="displayName"],
-    [class*="message"] [class*="DisplayName"],
-    [class*="message"] [class*="author"],
-    [class*="message"] [class*="Author"],
-    [class*="message"] [class*="header"],
-    [class*="message"] [class*="Header"],
-    [class*="member"] [class*="name"],
-    [class*="member"] [class*="Name"],
-    [class*="member"] [class*="username"],
-    [class*="member"] [class*="Username"],
-    [class*="member"] [class*="displayName"],
-    [class*="member"] [class*="DisplayName"],
-    [class*="userInfo"] [class*="name"],
-    [class*="userInfo"] [class*="Name"],
-    [class*="userInfo"] [class*="username"],
-    [class*="userInfo"] [class*="Username"],
-    [class*="userInfo"] [class*="displayName"],
-    [class*="userInfo"] [class*="DisplayName"],
-    [class*="cozy"] [class*="name"],
-    [class*="cozy"] [class*="Name"],
-    [class*="cozy"] [class*="username"],
-    [class*="cozy"] [class*="Username"],
-    [class*="compact"] [class*="name"],
-    [class*="compact"] [class*="Name"],
-    [class*="compact"] [class*="username"],
-    [class*="compact"] [class*="Username"] {
+    /* Specific fix for message author names and user info */
+    [class*="message"] [class*="name"]:not([class*="container"]):not([class*="Container"]),
+    [class*="message"] [class*="Name"]:not([class*="container"]):not([class*="Container"]),
+    [class*="message"] [class*="username"]:not([class*="container"]):not([class*="Container"]),
+    [class*="message"] [class*="Username"]:not([class*="container"]):not([class*="Container"]),
+    [class*="message"] [class*="displayName"]:not([class*="container"]):not([class*="Container"]),
+    [class*="message"] [class*="DisplayName"]:not([class*="container"]):not([class*="Container"]),
+    [class*="message"] [class*="author"]:not([class*="container"]):not([class*="Container"]),
+    [class*="message"] [class*="Author"]:not([class*="container"]):not([class*="Container"]),
+    [class*="member"] [class*="name"]:not([class*="container"]):not([class*="Container"]),
+    [class*="member"] [class*="Name"]:not([class*="container"]):not([class*="Container"]),
+    [class*="member"] [class*="username"]:not([class*="container"]):not([class*="Container"]),
+    [class*="member"] [class*="Username"]:not([class*="container"]):not([class*="Container"]),
+    [class*="userInfo"] [class*="name"]:not([class*="container"]):not([class*="Container"]),
+    [class*="userInfo"] [class*="Name"]:not([class*="container"]):not([class*="Container"]),
+    [class*="userInfo"] [class*="username"]:not([class*="container"]):not([class*="Container"]),
+    [class*="userInfo"] [class*="Username"]:not([class*="container"]):not([class*="Container"]) {
         background: transparent !important;
         background-color: transparent !important;
         background-image: none !important;
         color: rgba(0, 0, 0, 0.85) !important;
-    }
-
-    /* Universal selector for any element containing name/username classes */
-    *[class*="name"]:not([class*="container"]):not([class*="Container"]),
-    *[class*="Name"]:not([class*="container"]):not([class*="Container"]),
-    *[class*="username"]:not([class*="container"]):not([class*="Container"]),
-    *[class*="Username"]:not([class*="container"]):not([class*="Container"]),
-    *[class*="displayName"]:not([class*="container"]):not([class*="Container"]),
-    *[class*="DisplayName"]:not([class*="container"]):not([class*="Container"]) {
-        background: transparent !important;
-        background-color: transparent !important;
-        background-image: none !important;
-    }
-
-    /* Force transparent backgrounds on all possible name/username elements with maximum specificity */
-    #app-mount .visual-refresh *[class*="name"],
-    #app-mount .visual-refresh *[class*="Name"],
-    #app-mount .visual-refresh *[class*="username"],
-    #app-mount .visual-refresh *[class*="Username"],
-    #app-mount .visual-refresh *[class*="displayName"],
-    #app-mount .visual-refresh *[class*="DisplayName"],
-    #app-mount .visual-refresh *[class*="author"],
-    #app-mount .visual-refresh *[class*="Author"],
-    #app-mount .visual-refresh *[class*="header"] *[class*="name"],
-    #app-mount .visual-refresh *[class*="header"] *[class*="Name"],
-    #app-mount .visual-refresh *[class*="Header"] *[class*="name"],
-    #app-mount .visual-refresh *[class*="Header"] *[class*="Name"],
-    #app-mount .visual-refresh span[class*="name"],
-    #app-mount .visual-refresh span[class*="Name"],
-    #app-mount .visual-refresh span[class*="username"],
-    #app-mount .visual-refresh span[class*="Username"],
-    #app-mount .visual-refresh div[class*="name"],
-    #app-mount .visual-refresh div[class*="Name"],
-    #app-mount .visual-refresh div[class*="username"],
-    #app-mount .visual-refresh div[class*="Username"],
-    #app-mount .visual-refresh h1[class*="name"],
-    #app-mount .visual-refresh h2[class*="name"],
-    #app-mount .visual-refresh h3[class*="name"],
-    #app-mount .visual-refresh h4[class*="name"],
-    #app-mount .visual-refresh h5[class*="name"],
-    #app-mount .visual-refresh h6[class*="name"],
-    #app-mount .visual-refresh p[class*="name"],
-    #app-mount .visual-refresh a[class*="name"],
-    #app-mount .visual-refresh a[class*="Name"] {
-        background: transparent !important;
-        background-color: transparent !important;
-        background-image: none !important;
-        box-shadow: none !important;
-    }
-
-    /* Override any CSS variables that might set dark backgrounds */
-    #app-mount .visual-refresh *[class*="name"],
-    #app-mount .visual-refresh *[class*="Name"],
-    #app-mount .visual-refresh *[class*="username"],
-    #app-mount .visual-refresh *[class*="Username"] {
-        --background: transparent !important;
-        --background-color: transparent !important;
-    }
-
-    /* Nuclear option: Force transparent on ALL elements with name/username in class, regardless of specificity */
-    #app-mount .visual-refresh *[class*="name"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
-    #app-mount .visual-refresh *[class*="Name"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
-    #app-mount .visual-refresh *[class*="username"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
-    #app-mount .visual-refresh *[class*="Username"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
-    #app-mount .visual-refresh *[class*="displayName"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
-    #app-mount .visual-refresh *[class*="DisplayName"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]) {
-        background: transparent !important;
-        background-color: transparent !important;
-        background-image: none !important;
-        box-shadow: none !important;
-    }
-
-    /* Also target elements that might have background set via style attribute */
-    #app-mount .visual-refresh *[class*="name"][style*="background"],
-    #app-mount .visual-refresh *[class*="Name"][style*="background"],
-    #app-mount .visual-refresh *[class*="username"][style*="background"],
-    #app-mount .visual-refresh *[class*="Username"][style*="background"] {
-        background: transparent !important;
-        background-color: transparent !important;
     }
 }
 
