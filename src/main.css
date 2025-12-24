@@ -1,5 +1,5 @@
-@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+/* midnight import is done in theme file */
+/* DM Mono font import removed for iOS theme - using SF Pro instead */
 
 @font-face {
     font-family: 'asciid';
