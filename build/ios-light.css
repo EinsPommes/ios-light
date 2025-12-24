@@ -1,0 +1,994 @@
+/* main.css */
+/* midnight import is done in theme file */
+/* DM Mono font import removed for iOS theme - using SF Pro instead */
+
+@font-face {
+    font-family: 'asciid';
+    font-style: normal;
+    font-weight: 400;
+    src: local('asciid'), url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/assets/asciid.woff') format('woff');
+}
+
+/* Default values removed - iOS theme sets its own values */
+/* This file only contains the structure, values are set in theme/ios-light.theme.css */
+body {
+    /* All default values removed - iOS theme overrides everything */
+}
+
+/* color options - removed default colors, iOS theme sets its own colors in theme/ios-light.theme.css */
+
+body {
+    --custom-chatbar: separated !important; /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
+    --chatbar-height: 56px !important; /* height of the chatbar (52px by default, 47px recommended for aligned, 56px recommended for separated) */
+}
+
+.visual-refresh {
+    ._960e4207cea8323e-bg {
+        background: transparent !important; /* iOS doesn't use dark backgrounds */
+    }
+    ._01ae244280823725-container {
+        background-color: transparent !important; /* iOS doesn't use dark backgrounds */
+    }
+    ._37e49614b9f110a9-container {
+        padding: 8px;
+    }
+}
+
+/* ascii.css */
+@property --ascii-titles {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--ascii-titles: on) {
+    h3[data-text-variant='heading-xxl/extrabold'] {
+        font-family: 'asciid';
+        font-size: 50px;
+        font-weight: 400;
+    }
+}
+
+@property --ascii-loader {
+    syntax: 'off | system24 | cats';
+    inherits: false;
+    initial-value: system24;
+}
+
+@container body style(--ascii-loader: system24) {
+    .a2f5142ba8328dfd-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .a2f5142ba8328dfd-content > .a2f5142ba8328dfd-spinner {
+        display: none;
+    }
+    .a2f5142ba8328dfd-content::before {
+        display: block;
+        content: '                    __                ___  __ __\A    _______  _______/ /____  ____ ___ |__ \\/ // /\A   / ___/ / / / ___/ __/ _ \\/ __ `__ \\__/ / // /_\A  (__  ) /_/ (__  ) /_/  __/ / / / / / __/__  __/\A/____/\\__, /____/\\__/\\___/_/ /_/ /_/____/ /_/   \A      /____/                                     ';
+        font-size: 18px;
+        font-family: monospace;
+        white-space: pre;
+        line-height: 1.2;
+        background: linear-gradient(to right, var(--brand-360) 0%, var(--background-accent) 25%, var(--background-accent) 75%, var(--brand-360) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: textShine 1.5s linear infinite reverse;
+    }
+    .a2f5142ba8328dfd-text {
+        position: static;
+    }
+
+    @keyframes textShine {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        50.0001% {
+            background-position: -100%, 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
+
+@container body style(--ascii-loader: cats) {
+    .a2f5142ba8328dfd-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: static;
+    }
+    .a2f5142ba8328dfd-content > .a2f5142ba8328dfd-spinner {
+        display: none;
+    }
+    .a2f5142ba8328dfd-content::before {
+        display: block;
+        content: url('https://raw.githubusercontent.com/EinsPommes/ios-light/refs/heads/main/assets/cats.gif');
+    }
+    .a2f5142ba8328dfd-text {
+        position: static;
+    }
+}
+
+/* colors.css */
+@container root style(--colors: on) {
+    #app-mount ._44b0c28be7879b7b-wrapper,
+    #app-mount ._1ce5d425feffd32a-container {
+        --online-2: var(--online);
+        --dnd-2: var(--dnd);
+        --idle-2: var(--idle);
+        --offline-2: var(--offline);
+        --streaming-2: var(--streaming);
+    }
+}
+
+/* ios.css */
+/* iOS-specific styling enhancements */
+
+/* iOS-style rounded corners for panels */
+@container body style(--unrounding: off) {
+    .visual-refresh {
+        /* iOS uses 10px border radius for panels */
+        ._5e434347c823b592-panels,
+        ._5e434347c823b592-sidebar,
+        ._36d072eab2b2e737-messagesWrapper,
+        .f75fb00fb7356cbe-channelTextArea,
+        .c8ffbb79449f399c-container {
+            border-radius: 10px !important;
+        }
+
+        /* iOS uses 8px border radius for smaller elements */
+        ._5e434347c823b592-guilds,
+        ._133bf5eea8e33a34-container,
+        ._01ae244280823725-container {
+            border-radius: 8px !important;
+        }
+
+        /* iOS uses 12px border radius for buttons */
+        button,
+        .button,
+        [role="button"] {
+            border-radius: 12px !important;
+        }
+
+        /* iOS uses 20px border radius for avatars */
+        .a423bdd721ddcc83-avatar,
+        ._44b0c28be7879b7b-wrapper {
+            border-radius: 20px !important;
+        }
+    }
+}
+
+/* iOS-style panel labels with SF Pro font */
+@container body style(--panel-labels: on) {
+    .visual-refresh {
+        ._5e434347c823b592-guilds::after,
+        ._5e434347c823b592-panels::after,
+        ._5e434347c823b592-sidebarList::after,
+        .f75fb00fb7356cbe-subtitleContainer::after,
+        ._36d072eab2b2e737-messagesWrapper::after,
+        .f75fb00fb7356cbe-channelTextArea::after,
+        .c8ffbb79449f399c-container::after,
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap::after,
+        ._133bf5eea8e33a34-container > ._9293f6b2fc12398a-container::after,
+        ._133bf5eea8e33a34-peopleColumn::after,
+        ._133bf5eea8e33a34-nowPlayingColumn::after,
+        ._01ae244280823725-container > ._9293f6b2fc12398a-container::after,
+        .cb9592ad77576717-callContainer::after {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif !important;
+            font-size: 13px !important; /* iOS uses 13px for labels */
+            letter-spacing: -0.01em !important; /* iOS letter spacing */
+            text-transform: uppercase !important;
+            font-weight: 600 !important; /* iOS semibold */
+            background-color: transparent !important; /* No background for iOS labels */
+            color: rgba(0, 0, 0, 0.4) !important; /* iOS subtle gray */
+        }
+
+        ._5e434347c823b592-guilds:hover::after,
+        ._5e434347c823b592-panels:hover::after,
+        ._5e434347c823b592-sidebarList:hover::after,
+        .f75fb00fb7356cbe-subtitleContainer:hover::after,
+        ._36d072eab2b2e737-messagesWrapper:hover::after,
+        .f75fb00fb7356cbe-channelTextArea:hover::after,
+        .c8ffbb79449f399c-container:hover::after,
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap:hover::after,
+        ._133bf5eea8e33a34-container > ._9293f6b2fc12398a-container:hover::after,
+        ._133bf5eea8e33a34-peopleColumn:hover::after,
+        ._133bf5eea8e33a34-nowPlayingColumn:hover::after,
+        ._01ae244280823725-container > ._9293f6b2fc12398a-container:hover::after,
+        .cb9592ad77576717-callContainer:hover::after {
+            color: #007AFF !important; /* iOS blue on hover */
+        }
+    }
+}
+
+/* iOS-style spotify bar */
+@container body style(--custom-spotify-bar: on) {
+    .visual-refresh {
+        #vc-spotify-progress-bar {
+            border-radius: 8px !important; /* iOS rounded corners */
+        }
+        #app-mount #vc-spotify-progress-bar .a562c840daab72a7-bar {
+            border-radius: 8px !important;
+            background-color: rgba(0, 0, 0, 0.05); /* iOS subtle background */
+        }
+        #app-mount #vc-spotify-progress-bar .a562c840daab72a7-barFill {
+            border-radius: 8px !important;
+            background: linear-gradient(90deg, #007AFF, #5856D6) !important; /* iOS gradient */
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left,
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Mono', 'Monaco', monospace;
+            font-size: 13px; /* iOS monospace size */
+        }
+    }
+}
+
+/* iOS-style scrollbars */
+.visual-refresh {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.3);
+        background-clip: padding-box;
+    }
+}
+
+/* iOS-style input fields */
+.visual-refresh {
+    input,
+    textarea {
+        border-radius: 8px !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    }
+
+    /* iOS-style focus states */
+    input:focus,
+    textarea:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.3) !important;
+    }
+}
+
+/* iOS-style buttons */
+.visual-refresh {
+    button {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+        font-weight: 600; /* iOS semibold for buttons */
+        transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    /* iOS-style button press effect */
+    button:active {
+        transform: scale(0.97);
+        opacity: 0.8;
+    }
+}
+
+/* iOS-style modals and popovers */
+.visual-refresh {
+    [class*="modal"],
+    [class*="popover"],
+    [class*="menu"] {
+        border-radius: 14px !important; /* iOS modal radius */
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    }
+}
+
+/* iOS-style separators */
+.visual-refresh {
+    [class*="divider"],
+    [class*="separator"],
+    hr {
+        border: none;
+        height: 0.5px;
+        background: rgba(0, 0, 0, 0.1);
+        margin: 0;
+    }
+}
+
+/* iOS-style status indicators */
+.visual-refresh {
+    ._44b0c28be7879b7b-wrapper::after,
+    ._1ce5d425feffd32a-container::after {
+        border-radius: 50% !important; /* iOS circular status dots */
+        border-width: 2px !important;
+    }
+}
+
+/* iOS-style channel list items */
+.visual-refresh {
+    [class*="channel"] {
+        border-radius: 6px !important;
+        margin: 1px 0;
+    }
+
+    [class*="channel"]:hover {
+        background: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    [class*="channel"][class*="selected"] {
+        background: rgba(0, 122, 255, 0.1) !important;
+    }
+}
+
+/* iOS-style message bubbles */
+.visual-refresh {
+    [class*="message"] {
+        border-radius: 8px !important;
+    }
+}
+
+/* iOS-style code blocks */
+.visual-refresh {
+    code,
+    pre {
+        border-radius: 6px !important;
+        font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+/* iOS-style tooltips */
+.visual-refresh {
+    [class*="tooltip"],
+    [class*="Tooltip"] {
+        border-radius: 8px !important;
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        background: rgba(0, 0, 0, 0.8) !important;
+        padding: 6px 12px !important;
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+
+/* iOS-style badges and pills */
+.visual-refresh {
+    [class*="badge"],
+    [class*="Badge"],
+    [class*="pill"],
+    [class*="Pill"] {
+        border-radius: 10px !important;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 8px;
+    }
+}
+
+/* iOS-style switches */
+.visual-refresh {
+    [class*="switch"],
+    [class*="Switch"],
+    [type="checkbox"][role="switch"] {
+        border-radius: 16px !important;
+    }
+
+    [class*="switch"]::before,
+    [class*="Switch"]::before,
+    [type="checkbox"][role="switch"]::before {
+        border-radius: 50% !important;
+    }
+}
+
+/* iOS-style sliders */
+.visual-refresh {
+    [type="range"],
+    [class*="slider"],
+    [class*="Slider"] {
+        border-radius: 2px !important;
+    }
+
+    [type="range"]::-webkit-slider-thumb,
+    [class*="slider"]::-webkit-slider-thumb {
+        border-radius: 50% !important;
+        width: 28px;
+        height: 28px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* iOS-style tabs */
+.visual-refresh {
+    [class*="tab"],
+    [class*="Tab"],
+    [role="tab"] {
+        border-radius: 8px !important;
+        font-weight: 600;
+        transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    [class*="tab"][aria-selected="true"],
+    [class*="Tab"][aria-selected="true"],
+    [role="tab"][aria-selected="true"] {
+        background: rgba(0, 122, 255, 0.1) !important;
+        color: #007AFF !important;
+    }
+}
+
+/* iOS-style cards */
+.visual-refresh {
+    [class*="card"],
+    [class*="Card"] {
+        border-radius: 12px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
+}
+
+/* iOS-style list items */
+.visual-refresh {
+    [class*="listItem"],
+    [class*="ListItem"],
+    [role="listitem"] {
+        border-radius: 8px !important;
+        margin: 2px 0;
+        transition: background 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    [class*="listItem"]:hover,
+    [class*="ListItem"]:hover,
+    [role="listitem"]:hover {
+        background: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    [class*="listItem"][class*="selected"],
+    [class*="ListItem"][class*="selected"],
+    [role="listitem"][aria-selected="true"] {
+        background: rgba(0, 122, 255, 0.1) !important;
+    }
+}
+
+/* iOS-style embeds */
+.visual-refresh {
+    [class*="embed"],
+    [class*="Embed"] {
+        border-radius: 12px !important;
+        border-left-width: 4px !important;
+    }
+}
+
+/* iOS-style reactions */
+.visual-refresh {
+    [class*="reaction"],
+    [class*="Reaction"] {
+        border-radius: 12px !important;
+        border: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    [class*="reaction"]:hover,
+    [class*="Reaction"]:hover {
+        background: rgba(0, 122, 255, 0.1) !important;
+        border-color: rgba(0, 122, 255, 0.3) !important;
+    }
+}
+
+/* iOS-style mentions */
+.visual-refresh {
+    [class*="mention"],
+    [class*="Mention"] {
+        border-radius: 4px !important;
+        background: rgba(0, 122, 255, 0.1) !important;
+        color: #007AFF !important;
+        font-weight: 500;
+        padding: 1px 4px;
+    }
+}
+
+/* iOS-style loading states */
+.visual-refresh {
+    [class*="spinner"],
+    [class*="Spinner"],
+    [class*="loading"],
+    [class*="Loading"] {
+        border-radius: 50% !important;
+    }
+}
+
+/* iOS-style notification badges */
+.visual-refresh {
+    [class*="notification"],
+    [class*="Notification"],
+    [class*="unread"] {
+        border-radius: 10px !important;
+        background: #FF3B30 !important;
+        color: white !important;
+        font-weight: 600;
+        font-size: 11px;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 6px;
+    }
+}
+
+/* iOS-style search bars */
+.visual-refresh {
+    [class*="search"],
+    [class*="Search"],
+    input[type="search"] {
+        border-radius: 10px !important;
+        background: rgba(0, 0, 0, 0.05) !important;
+        border: none !important;
+        padding: 8px 12px !important;
+    }
+
+    [class*="search"]:focus,
+    [class*="Search"]:focus,
+    input[type="search"]:focus {
+        background: rgba(0, 0, 0, 0.08) !important;
+        box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2) !important;
+    }
+}
+
+/* iOS-style context menus */
+.visual-refresh {
+    [class*="contextMenu"],
+    [class*="ContextMenu"],
+    [class*="menu"] {
+        border-radius: 14px !important;
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        background: rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+        padding: 8px !important;
+    }
+
+    [class*="contextMenu"] [class*="item"],
+    [class*="ContextMenu"] [class*="item"],
+    [class*="menu"] [class*="item"] {
+        border-radius: 8px !important;
+        margin: 2px 0;
+    }
+
+    [class*="contextMenu"] [class*="item"]:hover,
+    [class*="ContextMenu"] [class*="item"]:hover,
+    [class*="menu"] [class*="item"]:hover {
+        background: rgba(0, 0, 0, 0.05) !important;
+    }
+}
+
+/* Fix dark backgrounds on text elements - remove all dark backgrounds from names and text */
+.visual-refresh {
+    /* Force light backgrounds on all main panels and containers */
+    #app-mount,
+    [class*="app"],
+    [class*="App"],
+    [class*="base"],
+    [class*="Base"],
+    [class*="layer"],
+    [class*="Layer"],
+    [class*="page"],
+    [class*="Page"],
+    [class*="sidebar"],
+    [class*="Sidebar"],
+    [class*="panels"],
+    [class*="Panels"],
+    [class*="container"],
+    [class*="Container"],
+    [class*="content"],
+    [class*="Content"] {
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+    }
+
+    /* Remove dark backgrounds from all text elements */
+    [class*="name"],
+    [class*="Name"],
+    [class*="username"],
+    [class*="Username"],
+    [class*="text"],
+    [class*="Text"],
+    [class*="title"],
+    [class*="Title"],
+    h1, h2, h3, h4, h5, h6,
+    p, span,
+    div[class*="text"],
+    div[class*="name"],
+    [class*="friend"],
+    [class*="Friend"],
+    [class*="activity"],
+    [class*="Activity"],
+    [class*="user"],
+    [class*="User"],
+    [class*="row"],
+    [class*="Row"],
+    [class*="item"],
+    [class*="Item"],
+    [class*="container"],
+    [class*="Container"] {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+
+    /* Remove dark backgrounds from containers in friends list and activity sidebar */
+    [class*="peopleColumn"],
+    [class*="nowPlayingColumn"],
+    [class*="friends"],
+    [class*="Friends"],
+    [class*="activity"],
+    [class*="Activity"],
+    [class*="listItem"],
+    [class*="ListItem"],
+    [class*="tabBody"],
+    [class*="TabBody"] {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+
+    /* Ensure text colors are correct for light theme */
+    [class*="name"],
+    [class*="Name"],
+    [class*="username"],
+    [class*="Username"],
+    [class*="text"],
+    [class*="Text"],
+    [class*="title"],
+    [class*="Title"] {
+        color: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    /* Remove any dark backgrounds from friend list items and their children */
+    [class*="peopleColumn"] [class*="listItem"],
+    [class*="peopleColumn"] [class*="ListItem"],
+    [class*="peopleColumn"] [class*="listItem"] *,
+    [class*="peopleColumn"] [class*="ListItem"] *,
+    [class*="nowPlayingColumn"] [class*="listItem"],
+    [class*="nowPlayingColumn"] [class*="ListItem"],
+    [class*="nowPlayingColumn"] [class*="listItem"] *,
+    [class*="nowPlayingColumn"] [class*="ListItem"] *,
+    [class*="friends"] [class*="listItem"],
+    [class*="friends"] [class*="ListItem"],
+    [class*="friends"] [class*="listItem"] *,
+    [class*="friends"] [class*="ListItem"] * {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+
+    /* Remove dark backgrounds from activity items */
+    [class*="activity"] [class*="item"],
+    [class*="Activity"] [class*="Item"],
+    [class*="activity"] [class*="item"] *,
+    [class*="Activity"] [class*="Item"] *,
+    [class*="nowPlayingColumn"] [class*="item"],
+    [class*="nowPlayingColumn"] [class*="Item"],
+    [class*="nowPlayingColumn"] [class*="item"] *,
+    [class*="nowPlayingColumn"] [class*="Item"] * {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+
+    /* Remove dark backgrounds from any wrapper or container elements */
+    [class*="wrapper"],
+    [class*="Wrapper"],
+    [class*="content"],
+    [class*="Content"],
+    [class*="header"],
+    [class*="Header"],
+    [class*="body"],
+    [class*="Body"] {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+}
+
+
+/* panel-labels.css */
+body {
+    --label-color: var(--text-muted);
+    --label-hover-color: var(--brand-360);
+    --label-font-weight: 500;
+}
+
+@property --panel-labels {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--panel-labels: on) {
+    .visual-refresh {
+        ._5e434347c823b592-guilds,
+        ._5e434347c823b592-panels,
+        ._5e434347c823b592-sidebarList,
+        .f75fb00fb7356cbe-subtitleContainer,
+        ._36d072eab2b2e737-messagesWrapper,
+        .f75fb00fb7356cbe-channelTextArea,
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap,
+        .c8ffbb79449f399c-container,
+        ._133bf5eea8e33a34-container > ._9293f6b2fc12398a-container,
+        ._133bf5eea8e33a34-peopleColumn,
+        ._133bf5eea8e33a34-nowPlayingColumn,
+        ._01ae244280823725-container > ._9293f6b2fc12398a-container,
+        .cb9592ad77576717-callContainer {
+            &::after {
+                display: block;
+                color: var(--label-color);
+                font-weight: var(--label-font-weight);
+                position: absolute;
+                top: -10px;
+                left: 8px;
+                background-color: transparent; /* iOS doesn't use background for labels */
+                padding: 0 4px;
+                z-index: 100;
+                font-size: 13px; /* iOS uses 13px for labels */
+                transition: color var(--border-hover-transition);
+            }
+
+            &:hover::after {
+                color: var(--label-hover-color);
+            }
+        }
+
+        ._5e434347c823b592-guilds::after {
+            content: 'nav';
+        }
+        ._5e434347c823b592-panels::after {
+            content: 'user';
+        }
+        ._5e434347c823b592-sidebarList::after {
+            content: 'channels';
+        }
+        .f75fb00fb7356cbe-subtitleContainer::after {
+            content: 'channel';
+        }
+        ._36d072eab2b2e737-messagesWrapper::after {
+            content: 'chat';
+        }
+        .f75fb00fb7356cbe-channelTextArea::after {
+            content: 'input';
+        }
+        .c8ffbb79449f399c-container::after,
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap::after {
+            content: 'members';
+        }
+        ._133bf5eea8e33a34-container > ._9293f6b2fc12398a-container:after {
+            content: 'friends';
+        }
+        ._133bf5eea8e33a34-peopleColumn::after {
+            content: 'list';
+        }
+        ._133bf5eea8e33a34-nowPlayingColumn::after {
+            content: 'activity';
+        }
+        ._01ae244280823725-container > ._9293f6b2fc12398a-container::after {
+            content: 'thread';
+        }
+        .cb9592ad77576717-callContainer::after {
+            content: 'vc';
+        }
+
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap,
+        ._5e434347c823b592-panels,
+        ._5e434347c823b592-sidebar,
+        ._5e434347c823b592-sidebarList,
+        .f75fb00fb7356cbe-chat,
+        ._5e434347c823b592-page,
+        .f75fb00fb7356cbe-channelTextArea,
+        ._133bf5eea8e33a34-container,
+        .c8ffbb79449f399c-container,
+        ._5e434347c823b592-guilds,
+        ._133bf5eea8e33a34-peopleColumn,
+        ._133bf5eea8e33a34-tabBody,
+        ._01ae244280823725-container,
+        .f75fb00fb7356cbe-chatContent,
+        ._36d072eab2b2e737-messagesWrapper {
+            overflow: visible !important;
+        }
+        ._5e434347c823b592-page,
+        ._133bf5eea8e33a34-tabBody {
+            min-height: 0;
+        }
+        ._133bf5eea8e33a34-peopleColumn {
+            min-width: 0;
+        }
+        ._5e434347c823b592-sidebarList,
+        .c8ffbb79449f399c-container,
+        ._133bf5eea8e33a34-peopleColumn,
+        ._133bf5eea8e33a34-nowPlayingColumn,
+        ._36d072eab2b2e737-messagesWrapper,
+        .f75fb00fb7356cbe-channelTextArea {
+            position: relative;
+        }
+
+        ._36d072eab2b2e737-scroller {
+            top: 8px;
+        }
+        .c8ffbb79449f399c-membersWrap {
+            height: calc(100% - 8px);
+        }
+
+        .ef3116c2da186559-scroller {
+            padding-top: calc(var(--custom-guild-list-padding) - 8px);
+        }
+
+        .f37cb1984c371ee5-animatedContainer,
+        .f37cb1984c371ee5-headerGlass {
+            left: 8px;
+            right: 8px;
+            width: auto;
+        }
+        .f37cb1984c371ee5-header {
+            margin: 0 8px;
+        }
+        ._2637a2609f343032-container {
+            overflow: hidden;
+        }
+
+        .f37cb1984c371ee5-headerEllipseForeground {
+            display: none;
+        }
+
+        .cb9592ad77576717-callContainer {
+            padding: 8px;
+        }
+
+        ._36d072eab2b2e737-messagesWrapper {
+            mask: none !important;
+        }
+    }
+}
+
+/* spotify-bar.css */
+@property --custom-spotify-bar {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--custom-spotify-bar: on) {
+    .visual-refresh {
+        /* text-like spotify progress bar */
+        #vc-spotify-progress-bar {
+            margin: 8px 0 0 0;
+        }
+        .vc-spotify-button-row {
+            margin-top: 8px;
+        }
+        #app-mount #vc-spotify-progress-bar .a562c840daab72a7-bar {
+            height: 22px !important;
+            top: 0 !important;
+            background-color: rgba(0, 0, 0, 0.05) !important; /* iOS subtle background */
+        }
+        #app-mount #vc-spotify-progress-bar .a562c840daab72a7-barFill {
+            height: 22px !important;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left,
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            z-index: 1;
+            top: 0;
+            margin-top: 0;
+            mix-blend-mode: difference;
+            font-size: 16px;
+            line-height: 22px;
+            pointer-events: none;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left {
+            left: 6px;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            right: 6px;
+        }
+        #vc-spotify-progress-bar .a562c840daab72a7-grabber {
+            visibility: hidden;
+        }
+    }
+}
+
+/* unrounding.css */
+@property --unrounding {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--unrounding: on) {
+    *,
+    *::before,
+    *::after {
+        border-radius: 0 !important;
+    }
+
+    .cc5dd25190031396-svg > mask,
+    ._44b0c28be7879b7b-svg > rect,
+    ._44b0c28be7879b7b-svg > circle,
+    ._44b0c28be7879b7b-svg > g,
+    ._44b0c28be7879b7b-svg rect[mask='url(#:rhi:)'],
+    ._20a53846fe2e8513-avatar .a423bdd721ddcc83-status {
+        display: none;
+    }
+
+    ._68edb95846a37624-mask > foreignObject,
+    ._44b0c28be7879b7b-svg > foreignObject,
+    ._2338f50c3988e5ec-svg > foreignObject {
+        mask: none;
+    }
+
+    ._44b0c28be7879b7b-wrapper,
+    ._1ce5d425feffd32a-container {
+        --online-2: #43a25a;
+        --dnd-2: #d83a41;
+        --idle-2: #ca9654;
+        --offline-2: #82838b;
+        --streaming-2: #9147ff;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect)::after,
+    ._1ce5d425feffd32a-container:has(.a423bdd721ddcc83-status)::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        bottom: -4px;
+        right: -4px;
+        border: 2px solid var(--background-base-lower);
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#43a25a'])::after,
+    ._1ce5d425feffd32a-container:has(.a423bdd721ddcc83-status[style='background-color: rgb(67, 162, 90);'])::after {
+        background: var(--online-2) !important;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#d83a42'])::after {
+        background: var(--dnd-2) !important;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#ca9654'])::after {
+        background: var(--idle-2) !important;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#82838b'])::after {
+        background: var(--offline-2) !important;
+    }
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#9147ff'])::after {
+        background: var(--streaming-2);
+    }
+
+    .cc5dd25190031396-lowerBadge {
+        border: 2px solid var(--background-base-lower);
+        bottom: -4px;
+        right: -4px;
+    }
+    .cc5dd25190031396-upperBadge {
+        border: 2px solid var(--background-base-lower);
+        top: -4px;
+        right: -4px;
+    }
+    ._48112cbe77dc5022-folderGroup._48112cbe77dc5022-isExpanded > .dbd2630aec71879b-stack {
+        overflow: visible !important;
+    }
+
+    ._3f21e80f8677ec40-slider > rect[rx='10'] {
+        rx: 0 !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0 !important;
+    }
+}
+

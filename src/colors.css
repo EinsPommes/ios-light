@@ -1,0 +1,10 @@
+@container root style(--colors: on) {
+    #app-mount ._44b0c28be7879b7b-wrapper,
+    #app-mount ._1ce5d425feffd32a-container {
+        --online-2: var(--online);
+        --dnd-2: var(--dnd);
+        --idle-2: var(--idle);
+        --offline-2: var(--offline);
+        --streaming-2: var(--streaming);
+    }
+}

@@ -1,0 +1,14 @@
+{
+	"name": "ios-light",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "node scripts/dev.js",
+		"build": "node scripts/build.js"
+	},
+	"author": "EinsPommes",
+	"license": "MIT",
+	"devDependencies": {
+		"chokidar": "^3.6.0",
+		"dotenv": "^16.4.5"
+	}
+}
