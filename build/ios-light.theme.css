@@ -13,7 +13,6 @@
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/colors.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/panel-labels.css');
 @import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/spotify-bar.css');
-@import url('https://raw.githubusercontent.com/EinsPommes/ios-light/main/src/unrounding.css');
 /* ios.css */
 /* iOS-specific styling enhancements */
 
@@ -441,6 +440,7 @@
 
 
 
+/* unrounding.css is NOT imported - iOS uses rounded corners (--unrounding: off) */
 
 body {
     /* font, change to '' for default discord font */
