@@ -627,5 +627,72 @@
         background-color: transparent !important;
         background-image: none !important;
     }
+
+    /* Force transparent backgrounds on all possible name/username elements with maximum specificity */
+    #app-mount .visual-refresh *[class*="name"],
+    #app-mount .visual-refresh *[class*="Name"],
+    #app-mount .visual-refresh *[class*="username"],
+    #app-mount .visual-refresh *[class*="Username"],
+    #app-mount .visual-refresh *[class*="displayName"],
+    #app-mount .visual-refresh *[class*="DisplayName"],
+    #app-mount .visual-refresh *[class*="author"],
+    #app-mount .visual-refresh *[class*="Author"],
+    #app-mount .visual-refresh *[class*="header"] *[class*="name"],
+    #app-mount .visual-refresh *[class*="header"] *[class*="Name"],
+    #app-mount .visual-refresh *[class*="Header"] *[class*="name"],
+    #app-mount .visual-refresh *[class*="Header"] *[class*="Name"],
+    #app-mount .visual-refresh span[class*="name"],
+    #app-mount .visual-refresh span[class*="Name"],
+    #app-mount .visual-refresh span[class*="username"],
+    #app-mount .visual-refresh span[class*="Username"],
+    #app-mount .visual-refresh div[class*="name"],
+    #app-mount .visual-refresh div[class*="Name"],
+    #app-mount .visual-refresh div[class*="username"],
+    #app-mount .visual-refresh div[class*="Username"],
+    #app-mount .visual-refresh h1[class*="name"],
+    #app-mount .visual-refresh h2[class*="name"],
+    #app-mount .visual-refresh h3[class*="name"],
+    #app-mount .visual-refresh h4[class*="name"],
+    #app-mount .visual-refresh h5[class*="name"],
+    #app-mount .visual-refresh h6[class*="name"],
+    #app-mount .visual-refresh p[class*="name"],
+    #app-mount .visual-refresh a[class*="name"],
+    #app-mount .visual-refresh a[class*="Name"] {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Override any CSS variables that might set dark backgrounds */
+    #app-mount .visual-refresh *[class*="name"],
+    #app-mount .visual-refresh *[class*="Name"],
+    #app-mount .visual-refresh *[class*="username"],
+    #app-mount .visual-refresh *[class*="Username"] {
+        --background: transparent !important;
+        --background-color: transparent !important;
+    }
+
+    /* Nuclear option: Force transparent on ALL elements with name/username in class, regardless of specificity */
+    #app-mount .visual-refresh *[class*="name"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    #app-mount .visual-refresh *[class*="Name"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    #app-mount .visual-refresh *[class*="username"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    #app-mount .visual-refresh *[class*="Username"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    #app-mount .visual-refresh *[class*="displayName"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]),
+    #app-mount .visual-refresh *[class*="DisplayName"]:not([class*="container"]):not([class*="Container"]):not([class*="background"]):not([class*="Background"]) {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Also target elements that might have background set via style attribute */
+    #app-mount .visual-refresh *[class*="name"][style*="background"],
+    #app-mount .visual-refresh *[class*="Name"][style*="background"],
+    #app-mount .visual-refresh *[class*="username"][style*="background"],
+    #app-mount .visual-refresh *[class*="Username"][style*="background"] {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
 }
 

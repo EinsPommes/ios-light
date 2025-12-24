@@ -169,4 +169,16 @@ body {
     ._37e49614b9f110a9-container {
         padding: 8px;
     }
+
+    /* Early fix for name elements to prevent dark backgrounds */
+    *[class*="name"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="Name"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="username"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="Username"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="displayName"]:not([class*="container"]):not([class*="Container"]),
+    *[class*="DisplayName"]:not([class*="container"]):not([class*="Container"]) {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+    }
 }
