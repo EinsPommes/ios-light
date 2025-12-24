@@ -28,11 +28,11 @@
 
     ._44b0c28be7879b7b-wrapper,
     ._1ce5d425feffd32a-container {
-        --online-2: #34C759;
-        --dnd-2: #FF3B30;
-        --idle-2: #FF9500;
-        --offline-2: rgba(0, 0, 0, 0.3);
-        --streaming-2: #5856D6;
+        --online-2: #43a25a;
+        --dnd-2: #d83a41;
+        --idle-2: #ca9654;
+        --offline-2: #82838b;
+        --streaming-2: #9147ff;
     }
     ._44b0c28be7879b7b-wrapper:has(rect)::after,
     ._1ce5d425feffd32a-container:has(.a423bdd721ddcc83-status)::after {
@@ -44,7 +44,6 @@
         bottom: -4px;
         right: -4px;
         border: 2px solid var(--background-base-lower);
-        border-radius: 50%;
     }
     ._44b0c28be7879b7b-wrapper:has(rect[fill='#43a25a'])::after,
     ._1ce5d425feffd32a-container:has(.a423bdd721ddcc83-status[style='background-color: rgb(67, 162, 90);'])::after {

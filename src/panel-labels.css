@@ -1,7 +1,7 @@
 body {
-    --label-color: rgba(0, 0, 0, 0.4);
-    --label-hover-color: #007AFF;
-    --label-font-weight: 600;
+    --label-color: var(--text-muted);
+    --label-hover-color: var(--brand-360);
+    --label-font-weight: 500;
 }
 
 @property --panel-labels {
@@ -32,13 +32,10 @@ body {
                 position: absolute;
                 top: -10px;
                 left: 8px;
-                background-color: transparent;
+                background-color: var(--background-base-low);
                 padding: 0 4px;
                 z-index: 100;
-                font-size: 13px;
-                font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
-                letter-spacing: -0.01em;
-                text-transform: uppercase;
+                font-size: 16px;
                 transition: color var(--border-hover-transition);
             }
 
